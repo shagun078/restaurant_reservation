@@ -14,7 +14,8 @@ console.log("Allowed Frontend URL:", process.env.FRONTEND_URL);
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, 
+    // origin: process.env.FRONTEND_URL, 
+    origin:'https://restaurant-reservation-mauve.vercel.app/',
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -23,9 +24,14 @@ app.use(
   })
 );
 
-// Middleware to log requests and headers for debugging
+// // Middleware to log requests and headers for debugging
+// app.use((req, res, next) => {
+//   console.log("Request Headers:", req.headers);
+//   next();
+// });
+
 app.use((req, res, next) => {
-  console.log("Request Headers:", req.headers);
+  res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com");
   next();
 });
 

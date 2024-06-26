@@ -57,12 +57,14 @@ const Reservation = () => {
               <div>
                 <input
                   type="text"
+                  id="firstname"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
                 <input
                   type="text"
+                  id="lastname"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -85,6 +87,7 @@ const Reservation = () => {
               <div>
                 <input
                   type="email"
+                  id="email"
                   placeholder="Email"
                   className="email_tag"
                   value={email}
@@ -92,6 +95,7 @@ const Reservation = () => {
                 />
                 <input
                   type="number"
+                  id="phonenumber"
                   placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
