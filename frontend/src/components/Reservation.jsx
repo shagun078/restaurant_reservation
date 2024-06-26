@@ -90,6 +90,7 @@ const Reservation = () => {
                   id="email"
                   placeholder="Email"
                   className="email_tag"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />

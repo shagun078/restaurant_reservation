@@ -15,7 +15,7 @@ console.log("Allowed Frontend URL:", process.env.FRONTEND_URL);
 app.use(
   cors({
     // origin: process.env.FRONTEND_URL, 
-    origin:'https://restaurant-reservation-mauve.vercel.app/',
+    origin:'https://restaurant-reservation-mauve.vercel.app',
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
