@@ -15,9 +15,11 @@ const Reservation = () => {
   const navigate = useNavigate();
 
   const handleReservation = async (e) => {
+    console.log('button pressed');
     e.preventDefault();
     try {
       const { data } = await axios.post(
+       
         "https://restaurant-reservation-b.vercel.app/api/v1/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
@@ -26,6 +28,7 @@ const Reservation = () => {
           },
           withCredentials: true,
         }
+       
       );
       toast.success(data.message);
       setFirstName("");
